@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h2>Notes App-Vue.js</h2>
+        <div id="app">
+            <a @click="btn" class="btn1">添加笔记</a>
+            <div class="inp">
+                <span>几秒前</span>
+                <input type="text" :placeholder="num" id="inpt1" v-model="num" class="a1">
+                <textarea type="text" id="inpt2" v-model="text1" @keyup="key1"></textarea>
+                <span id="span">{{span1}}</span>
+            </div>
+    <div class="main">
+        <h2>已发布</h2>
+        <div class="inpx clearfix inp">
+            <ul v-for="(ul,index) in uls">
+                <li><span class="fl">{{ul.time}}</span>{{ul.text}}</li>
+                <p><textarea name="" id="text" cols="150" rows="5" @keyup="submit1(index)" v-model="ul.nei"></textarea></p>
+                <a @click="btn2(index)">{{ul.delete}}</a>
+                <span id="span">{{ul.span}}</span>
+            </ul>
+
+            
+        </div>
+    </div>
+        </div>
+    </header>
+    
+    
+    <script src="js/vue.js"></script>
+    
+    <script src="js/style.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js"></script>
+</body>
+</html>
